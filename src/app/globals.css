@@ -3,45 +3,48 @@
 @tailwind utilities;
 
 :root {
-  --lavender: #e6e6fa;
-  --dark-blue: #23235b;
-  --white: #ffffff;
-  --primary-color: var(--lavender);
-  --secondary-color: var(--dark-blue);
-  --accent-color: #b39ddb;
-  --text-color: var(--dark-blue);
-  --background-color: var(--white);
-  --header-bg: var(--dark-blue);
-  --footer-bg: #2d2d6a;
+  --primary: #2563eb;
+  --secondary: #1e293b;
+  --accent: #38bdf8;
+  --background: #f8fafc;
+  --card-bg: #fff;
+  --text: #1e293b;
+  --header-bg: #1e293b;
+  --footer-bg: #1e293b;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --primary: #38bdf8;
+    --secondary: #0f172a;
+    --accent: #2563eb;
+    --background: #0f172a;
+    --card-bg: #1e293b;
+    --text: #f1f5f9;
+    --header-bg: #0f172a;
+    --footer-bg: #0f172a;
   }
 }
 
 body {
   font-family: 'Inter', 'Roboto', Arial, sans-serif;
-  color: var(--text-color);
-  background: var(--background-color);
+  color: var(--text);
+  background: var(--background);
   margin: 0;
   padding: 0;
 }
 
 a {
-  color: var(--secondary-color);
+  color: var(--secondary);
   transition: color 0.2s;
 }
 
 a:hover {
-  color: var(--accent-color);
+  color: var(--accent);
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: var(--dark-blue);
+  color: var(--primary);
   font-family: 'Montserrat', 'Inter', Arial, sans-serif;
 }
 
@@ -55,4 +58,19 @@ main {
   flex: 1;
   display: flex;
   flex-direction: column;
+}
+
+.card, .about-card, .about-feature-card {
+  background: var(--card-bg);
+  color: var(--text);
+}
+
+.header, .navbar {
+  background: var(--header-bg);
+  color: #fff;
+}
+
+.footer {
+  background: var(--footer-bg);
+  color: #fff;
 }
