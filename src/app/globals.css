@@ -3,9 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --lavender: #e6e6fa;
+  --dark-blue: #23235b;
+  --white: #ffffff;
+  --primary-color: var(--lavender);
+  --secondary-color: var(--dark-blue);
+  --accent-color: #b39ddb;
+  --text-color: var(--dark-blue);
+  --background-color: var(--white);
+  --header-bg: var(--dark-blue);
+  --footer-bg: #2d2d6a;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,11 +24,35 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    rgb(var(--background-end-rgb))
-  )
-  rgb(var(--background-start-rgb));
+  font-family: 'Inter', 'Roboto', Arial, sans-serif;
+  color: var(--text-color);
+  background: var(--background-color);
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--secondary-color);
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--dark-blue);
+  font-family: 'Montserrat', 'Inter', Arial, sans-serif;
+}
+
+.app-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }

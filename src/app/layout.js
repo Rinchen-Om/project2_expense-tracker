@@ -1,6 +1,7 @@
 import './globals.css';
 import { Inter, Roboto, Montserrat } from 'next/font/google';
 import Providers from './providers';
+import CommonLayout from './components/CommonLayout';
 
 const inter = Inter({ subsets: ['latin'] });
 const roboto = Roboto({ 
@@ -30,7 +31,11 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${inter.className} ${roboto.className} ${montserrat.className}`}>
         <Providers>
-          {children}
+          <div className="app-root">
+            <CommonLayout>
+              <main style={{ flex: 1 }}>{children}</main>
+            </CommonLayout>
+          </div>
         </Providers>
       </body>
     </html>

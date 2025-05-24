@@ -1,17 +1,17 @@
 /* Global Styles */
 :root {
-    --primary-color: #34495E;    /* 60% - Dominant color (deep blue-gray) */
-    --secondary-color: #95A5A6;  /* 30% - Secondary color (soft gray) */
-    --accent-color: #8B4513;     /* 10% - Accent color (saddle brown) */
-    --light-color: #F5F6FA;      /* Light background */
-    --dark-color: #2C3E50;       /* Dark text */
-    --success-color: #27AE60;    /* Success green */
-    --warning-color: #F39C12;    /* Warning orange */
-    --danger-color: #E74C3C;     /* Danger red */
-    --gray-color: #7F8C8D;       /* Medium gray */
-    --light-gray: #ECF0F1;       /* Light gray */
-    --border-radius: 8px;
-    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --primary-color: #e6e6fa; /* Lavender */
+    --secondary-color: #23235b; /* Dark Blue */
+    --accent-color: #b39ddb; /* Soft Lavender */
+    --light-color: #ffffff; /* White */
+    --dark-color: #23235b; /* Dark Blue */
+    --success-color: #27AE60;
+    --warning-color: #F39C12;
+    --danger-color: #E74C3C;
+    --gray-color: #7F8C8D;
+    --light-gray: #f3f3fa;
+    --border-radius: 10px;
+    --box-shadow: 0 4px 16px rgba(35, 35, 91, 0.08);
     --transition: all 0.3s ease;
 }
 
@@ -70,7 +70,8 @@ a {
 
 /* Navigation */
 .navbar {
-    background-color: rgba(18, 134, 163, 0.753);
+    background: var(--secondary-color);
+    color: var(--light-color);
     box-shadow: var(--box-shadow);
     padding: 15px 0;
     position: sticky;
@@ -96,7 +97,7 @@ a {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 1.5rem;
-    color: var(--primary-color);
+    color: var(--light-color);
     white-space: nowrap;
 }
 
@@ -131,16 +132,17 @@ a {
     border-radius: var(--border-radius);
     transition: var(--transition);
     font-weight: 500;
+    color: var(--light-color);
 }
 
 .main-nav li a:hover {
-    background-color: var(--light-gray);
-    color: var(--primary-color);
+    background: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 .main-nav li a.active {
-    background-color: var(--primary-color);
-    color: white;
+    background: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 .main-nav li a i {
@@ -182,6 +184,7 @@ a {
     align-items: center;
     margin-left: 30px;
     position: relative;
+    color: var(--light-color);
 }
 
 .avatar {
@@ -272,7 +275,8 @@ a {
 }
 
 .card {
-    background-color: white;
+    background: var(--primary-color);
+    color: var(--secondary-color);
     border-radius: var(--border-radius);
     padding: 20px;
     box-shadow: var(--box-shadow);
@@ -468,7 +472,8 @@ a {
   flex: 1;
   padding: 30px;
   border-radius: var(--border-radius);
-  background: white;
+  background: var(--primary-color);
+  color: var(--secondary-color);
   box-shadow: var(--box-shadow);
   transition: var(--transition);
 }
@@ -503,7 +508,8 @@ a {
 
 .about-feature-card {
   padding: 25px;
-  background: white;
+  background: var(--primary-color);
+  color: var(--secondary-color);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   text-align: center;
@@ -586,9 +592,12 @@ a {
 
 /* Footer .............*/
 .footer {
-    background-color: #1C1C1C;
-    color: #F5F5F5;
-    padding: 50px 0 20px;
+    background: var(--secondary-color);
+    color: var(--light-color);
+    padding: 40px 0 0 0;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
     margin-top: 50px;
     width: 100%;
 }
@@ -607,7 +616,7 @@ a {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 1.5rem;
-    color: white;
+    color: var(--primary-color);
     margin-bottom: 15px;
     display: flex;
     align-items: center;
@@ -647,7 +656,7 @@ a {
     font-size: 1.2rem;
     font-weight: 500;
     margin-bottom: 20px;
-    color: white;
+    color: var(--primary-color);
 }
 
 .footer-links {
@@ -661,6 +670,7 @@ a {
 .footer-links a {
     opacity: 0.8;
     transition: var(--transition);
+    color: var(--primary-color);
 }
 
 .footer-links a:hover {
@@ -671,11 +681,21 @@ a {
 .footer-newsletter input {
     width: 100%;
     padding: 10px;
-    border: none;
+    border: 1px solid var(--accent-color);
     border-radius: var(--border-radius);
     margin-bottom: 10px;
-    background-color: #333;
-    color: white;
+    background: var(--light-color);
+    color: var(--dark-color);
+}
+
+.footer-newsletter button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: var(--border-radius);
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    cursor: pointer;
 }
 
 .footer-bottom {

@@ -1,23 +1,23 @@
 /* Income Tracker Page Styles */
 :root {
-    --primary-color: #4361ee;
-    --secondary-color: #3f37c9;
-    --accent-color: #4895ef;
-    --light-color: #f8f9fa;
-    --dark-color: #212529;
+    --primary-color: #e6e6fa;
+    --secondary-color: #23235b;
+    --accent-color: #b39ddb;
+    --light-color: #ffffff;
+    --dark-color: #23235b;
     --success-color: #4bb543;
     --warning-color: #f0ad4e;
     --danger-color: #d9534f;
     --gray-color: #6c757d;
-    --light-gray: #e9ecef;
-    --border-radius: 8px;
-    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --light-gray: #f3f3fa;
+    --border-radius: 10px;
+    --box-shadow: 0 4px 16px rgba(35, 35, 91, 0.08);
     --transition: all 0.3s ease;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: var(--light-color);
+    background-color: var(--primary-color);
     color: var(--dark-color);
     line-height: 1.6;
     transition: var(--transition);
@@ -37,11 +37,8 @@ body.dark-mode {
     padding: 20px 0;
 }
 
-.page-title {
-    text-align: center;
-    margin-bottom: 30px;
+.page-title, .form-title, .summary-title, .history-title {
     color: var(--secondary-color);
-    font-size: 2.5rem;
 }
 
 .income-section {
@@ -56,18 +53,11 @@ body.dark-mode {
     }
 }
 
-.income-form {
-    background: white;
-    padding: 25px;
+.income-form, .income-summary, .income-goal, .income-history, .stat-card {
+    background: var(--light-color);
+    color: var(--dark-color);
     border-radius: 10px;
     box-shadow: var(--box-shadow);
-}
-
-.form-title {
-    margin-bottom: 20px;
-    color: var(--primary-color);
-    font-size: 1.5rem;
-    text-align: center;
 }
 
 .form-group {
@@ -79,13 +69,11 @@ body.dark-mode {
     font-weight: 600;
     color: var(--dark-color);
 }
-.form-control {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: border-color 0.3s;
+input, select, textarea {
+    border-radius: 10px;
+    border: 1px solid var(--accent-color);
+    background: var(--light-color);
+    color: var(--dark-color);
 }
 .form-control:focus {
     border-color: var(--accent-color);
@@ -113,14 +101,10 @@ body.dark-mode {
 }
 
 .income-summary {
-    background: white;
     padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .summary-title {
     margin-bottom: 20px;
-    color: var(--primary-color);
     font-size: 1.5rem;
     text-align: center;
 }
@@ -136,14 +120,10 @@ body.dark-mode {
     margin-bottom: 30px;
 }
 .stat-card {
-    background: white;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 .stat-card h3 {
-    color: var(--secondary-color);
     margin-bottom: 10px;
     font-size: 1.1rem;
 }
@@ -153,10 +133,7 @@ body.dark-mode {
     color: var(--primary-color);
 }
 .income-goal {
-    background: white;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 30px;
 }
 .goal-header {
@@ -166,7 +143,6 @@ body.dark-mode {
     margin-bottom: 15px;
 }
 .goal-title {
-    color: var(--secondary-color);
     font-size: 1.2rem;
 }
 .progress-container {
@@ -189,14 +165,10 @@ body.dark-mode {
     color: var(--dark-color);
 }
 .income-history {
-    background: white;
     padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .history-title {
     margin-bottom: 20px;
-    color: var(--primary-color);
     font-size: 1.5rem;
     text-align: center;
 }
