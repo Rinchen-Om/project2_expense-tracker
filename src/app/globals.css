@@ -3,66 +3,49 @@
 @tailwind utilities;
 
 :root {
-  --lavender: #e6e6fa;
-  --dark-blue: #23235b;
-  --white: #ffffff;
-  --primary-color: var(--lavender);
-  --secondary-color: var(--dark-blue);
-  --accent-color: #b39ddb;
-  --text-color: var(--dark-blue);
-  --background-color: var(--white);
-  --header-bg: var(--dark-blue);
-  --footer-bg: #d2d6da;
-  --primary: #2563eb;
-  --secondary: #1e293b;
-  --accent: #3b82f6;
-  --background: #f8fafc;
+  /* 60% - Primary (background) */
+  --primary: #f4f6fb;
+  /* 30% - Secondary (header, footer, cards) */
+  --secondary: #223056;
+  /* 10% - Accent (buttons, links, highlights) */
+  --accent: #38bdf8;
+  --text: #1a202c;
   --card-bg: #fff;
-  --text: #1e293b;
-  --header-bg: #1e293b;
-  --footer-bg: #1e293b;
+  --header-bg: #223056;
+  --footer-bg: #223056;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-    --primary: #38bd6f;
-    --secondary: #0f172a;
-    --accent: #2650eb;
-    --background: #0f172a;
-    --card-bg: #1e293b;
+    --primary: #181c25;
+    --secondary: #232e47;
+    --accent: #60a5fa;
     --text: #f1f5f9;
-    --header-bg: #0f172a;
-    --footer-bg: #0f172a;
+    --card-bg: #232e47;
+    --header-bg: #181c25;
+    --footer-bg: #181c25;
   }
 }
 
 body {
   font-family: 'Inter', 'Roboto', Arial, sans-serif;
-  color: var(--text-color);
-  background: var(--background-color);
   color: var(--text);
-  background-color: var(--background);
+  background: var(--primary);
   margin: 0;
   padding: 0;
 }
 
 a {
-  color: var(--secondary-color);
-  color: var(--secondary);
+  color: var(--accent);
   transition: color 0.2s;
 }
 
 a:hover {
-  color: var(--accent-color);
-  color: var(--accent);
+  color: var(--secondary);
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: var(--dark-blue);
-  color: var(--primary);
+  color: var(--secondary);
   font-family: 'Montserrat', 'Inter', Arial, sans-serif;
 }
 
@@ -74,15 +57,27 @@ a {
 .card, .about-card, .about-feature-card {
   background: var(--card-bg);
   color: var(--text);
+  border-color: var(--secondary);
 }
 
-  .header, .navbar {
-    background: var(--header-bg);
-    color: #fff;
-  }
+.header, .navbar {
+  background: var(--header-bg);
+  color: #fff;
+}
 
-  .footer {
-    background: var(--footer-bg);
-    color: #fff;
-  }
+.footer {
+  background: var(--footer-bg);
+  color: #fff;
+}
+
+.btn, .btn-primary, button, input[type="submit"] {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+}
+
+.btn:hover, .btn-primary:hover, button:hover, input[type="submit"]:hover {
+  background: var(--secondary);
+  color: #fff;
+}
 
