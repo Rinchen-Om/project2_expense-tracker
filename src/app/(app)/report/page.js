@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
-import styles from '../../styles/report.module.css';
+import styles from '../../styles/analysis.module.css';
 import Chart from 'chart.js/auto';
 import '../../styles/home.css';
 
