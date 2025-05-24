@@ -1,8 +1,15 @@
-'use client';
+"use client";
 
 import { useEffect, useState, useRef } from 'react';
+import dynamic from 'next/dynamic';
 import '../../styles/home.css';
 import 'leaflet/dist/leaflet.css';
+
+// Dynamically import the Map component with no SSR
+const Map = dynamic(() => import('../../components/Map'), {
+  ssr: false,
+  loading: () => <p>Loading map...</p>
+});
 
 export default function Home() {
   const [transactions, setTransactions] = useState([]);
