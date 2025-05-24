@@ -2,7 +2,7 @@ import './globals.css';
 import { Inter, Roboto, Montserrat } from 'next/font/google';
 import Providers from './providers';
 import CommonLayout from './components/CommonLayout';
-import { usePathname } from 'next/navigation';
+import LayoutClient from './components/LayoutClient';
 
 const inter = Inter({ subsets: ['latin'] });
 const roboto = Roboto({ 
@@ -22,8 +22,6 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  const pathname = usePathname();
-  const isLogin = pathname === '/login';
   return (
     <html lang="en">
       <head>
@@ -35,13 +33,7 @@ export default function RootLayout({ children }) {
       <body className={`${inter.className} ${roboto.className} ${montserrat.className}`}>
         <Providers>
           <div className="app-root">
-            {isLogin ? (
-              <main style={{ flex: 1 }}>{children}</main>
-            ) : (
-              <CommonLayout>
-                <main style={{ flex: 1 }}>{children}</main>
-              </CommonLayout>
-            )}
+            <LayoutClient>{children}</LayoutClient>
           </div>
         </Providers>
       </body>
