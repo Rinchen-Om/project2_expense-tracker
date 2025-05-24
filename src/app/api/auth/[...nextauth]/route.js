@@ -6,7 +6,18 @@ import bcrypt from "bcryptjs";
 // Mark this route as dynamic
 export const dynamic = 'force-dynamic';
 
-const prisma = new PrismaClient();
+// Initialize PrismaClient outside of the handler
+let prisma;
+
+try {
+  prisma = new PrismaClient();
+} catch (error) {
+  console.error('Failed to initialize PrismaClient:', error);
+}
+
+if (!process.env.NEXTAUTH_SECRET) {
+  throw new Error('NEXTAUTH_SECRET is not set in environment variables');
+}
 
 const handler = NextAuth({
   providers: [
@@ -21,30 +32,39 @@ const handler = NextAuth({
           throw new Error("Please enter an email and password");
         }
 
-        const user = await prisma.user.findUnique({
-          where: {
-            email: credentials.email
+        try {
+          if (!prisma) {
+            throw new Error("Database connection failed");
           }
-        });
 
-        if (!user) {
-          throw new Error("No user found with this email");
+          const user = await prisma.user.findUnique({
+            where: {
+              email: credentials.email
+            }
+          });
+
+          if (!user) {
+            throw new Error("No user found with this email");
+          }
+
+          const isPasswordValid = await bcrypt.compare(
+            credentials.password,
+            user.password_hash
+          );
+
+          if (!isPasswordValid) {
+            throw new Error("Invalid password");
+          }
+
+          return {
+            id: user.id,
+            email: user.email,
+            name: user.name
+          };
+        } catch (error) {
+          console.error("Auth error:", error);
+          throw new Error(error.message || "Authentication failed");
         }
-
-        const isPasswordValid = await bcrypt.compare(
-          credentials.password,
-          user.password_hash
-        );
-
-        if (!isPasswordValid) {
-          throw new Error("Invalid password");
-        }
-
-        return {
-          id: user.id,
-          email: user.email,
-          name: user.name
-        };
       }
     })
   ],
@@ -69,7 +89,9 @@ const handler = NextAuth({
       }
       return session;
     }
-  }
+  },
+  secret: process.env.NEXTAUTH_SECRET,
+  debug: process.env.NODE_ENV === "development"
 });
 
 export { handler as GET, handler as POST }; 
