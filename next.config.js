@@ -3,9 +3,6 @@ const nextConfig = {
   images: {
     domains: ['via.placeholder.com'],
   },
-  experimental: {
-    serverActions: true,
-  },
   // Ignore API routes during static generation
   async headers() {
     return [
