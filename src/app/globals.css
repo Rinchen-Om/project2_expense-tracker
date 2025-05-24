@@ -17,6 +17,34 @@
 }
 
 body {
+  font-family: 'Inter', 'Roboto', Arial, sans-serif;
+  color: var(--text);
+  background: var(--background);
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary);
+  font-family: 'Montserrat', 'Inter', Arial, sans-serif;
+}
+
+.card, .about-card, .about-feature-card {
+  background: var(--card-bg);
+  color: var(--text);
+}
+
+.header, .navbar {
+  background: var(--header-bg);
+  color: #fff;
+}
+
+.footer {
+  background: var(--footer-bg);
+  color: #fff;
+}
+
+body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
     to bottom,
@@ -24,4 +52,24 @@ body {
     rgb(var(--background-end-rgb))
   )
   rgb(var(--background-start-rgb));
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, #__next, .app-root {
+  min-height: 100vh;
+  min-width: 100vw;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
