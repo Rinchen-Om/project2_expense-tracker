@@ -1,15 +1,7 @@
 "use client";
 
-import { useEffect, useState, useRef } from 'react';
-import dynamic from 'next/dynamic';
+import { useEffect, useState } from 'react';
 import '../../styles/home.css';
-import '../../styles/leaflet.css';
-
-// Dynamically import the Map component with no SSR
-const Map = dynamic(() => import('../../components/Map'), {
-  ssr: false,
-  loading: () => <p>Loading map...</p>
-});
 
 export default function Home() {
   const [transactions, setTransactions] = useState([]);
@@ -19,9 +11,6 @@ export default function Home() {
   const [showAllTransactions, setShowAllTransactions] = useState(false);
 
   useEffect(() => {
-    // Import Leaflet CSS dynamically
-    import('leaflet/dist/leaflet.css');
-    
     async function fetchData() {
       const [incomeRes, expenseRes] = await Promise.all([
         fetch('/api/income'),
@@ -176,45 +165,6 @@ export default function Home() {
 }
 
 function AboutSection() {
-  const mapRef = useRef(null);
-  useEffect(() => {
-    // Only run on client
-    if (typeof window !== 'undefined' && mapRef.current && !window._aboutMapLoaded) {
-      window._aboutMapLoaded = true;
-      const L = require('leaflet');
-      const cstCollege = [27.4712, 89.6332];
-      const map = L.map(mapRef.current).setView(cstCollege, 15);
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; OpenStreetMap contributors'
-      }).addTo(map);
-      L.marker(cstCollege)
-        .addTo(map)
-        .bindPopup('College of Science & Technology (CST), Bhutan')
-        .openPopup();
-    }
-    // Animation on scroll
-    const animateOnScroll = () => {
-      const elements = document.querySelectorAll('.about-card, .about-feature-card');
-      const observer = new window.IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-          }
-        });
-      }, { threshold: 0.1 });
-      elements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        observer.observe(el);
-      });
-    };
-    if (typeof window !== 'undefined') {
-      window.addEventListener('load', animateOnScroll);
-      animateOnScroll();
-    }
-  }, []);
   return (
     <>
       <section className="about-hero">
@@ -262,14 +212,6 @@ function AboutSection() {
           </div>
         </div>
       </section>
-      <section className="about-location">
-        <div className="about-container">
-          <h2>Our Location</h2>
-          <p>College of Science & Technology (CST), Bhutan</p>
-          <div id="about-map" ref={mapRef} style={{ height: 400, width: '100%', borderRadius: 10, boxShadow: '0 5px 15px rgba(0,0,0,0.1)' }}></div>
-        </div>
-      </section>
-     
     </>
   );
 } 
