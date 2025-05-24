@@ -64,17 +64,17 @@ export default function HelpPage() {
           <div className="faqList">
             <div className="faqItem">
               <h3>How do I add a new expense?</h3>
-              <p>To add a new expense, click the "Add Expense" button in the dashboard. Fill in the required details such as amount, category, date, and description. Click "Save" to record the expense.</p>
+              <p>To add a new expense, click the &quot;Add Expense&quot; button in the dashboard. Fill in the required details such as amount, category, date, and description. Click &quot;Save&quot; to record the expense.</p>
             </div>
 
             <div className="faqItem">
               <h3>Can I export my expense data?</h3>
-              <p>Yes, you can export your expense data in various formats including CSV, Excel, and PDF. Go to the Reports section and click on the "Export" button to choose your preferred format.</p>
+              <p>Yes, you can export your expense data in various formats including CSV, Excel, and PDF. Go to the Reports section and click on the &quot;Export&quot; button to choose your preferred format.</p>
             </div>
 
             <div className="faqItem">
               <h3>How do I set up budget categories?</h3>
-              <p>Navigate to Settings {'>'} Budget Categories. Here you can create, edit, or delete budget categories. You can also set spending limits for each category.</p>
+              <p>Navigate to Settings &gt; Budget Categories. Here you can create, edit, or delete budget categories. You can also set spending limits for each category.</p>
             </div>
 
             <div className="faqItem">

@@ -34,7 +34,7 @@ export default function BudgetPlanner() {
     if (budgetChartRef.current && spendingChartRef.current) {
       updateCharts();
     }
-  }, [budgetData]);
+  }, [budgetData, updateCharts]);
 
   const addBudgetRow = (category = '', planned = 0, actual = 0) => {
     setBudgetData([...budgetData, { category, planned, actual }]);

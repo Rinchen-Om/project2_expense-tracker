@@ -9,7 +9,7 @@ export default function ContactPage() {
         <h1>Contact Our Expense Tracker Team</h1>
         <p>
           Have questions about our expense tracking solution? Need support with your account? 
-          Reach out to our team and we'll get back to you within 24 hours.
+          Reach out to our team and we&apos;ll get back to you within 24 hours.
         </p>
       </div>
 

@@ -37,7 +37,7 @@ export default function TermsAndConditions() {
             <li>Use the materials for any commercial purpose</li>
             <li>Attempt to decompile or reverse engineer any software contained in Expense Tracker</li>
             <li>Remove any copyright or other proprietary notations from the materials</li>
-            <li>Transfer the materials to another person or "mirror" the materials on any other server</li>
+            <li>Transfer the materials to another person or &quot;mirror&quot; the materials on any other server</li>
           </ul>
         </section>
 
@@ -90,7 +90,7 @@ export default function TermsAndConditions() {
           <h2>7. Changes to Terms</h2>
           <p>
             We reserve the right to modify or replace these Terms at any time. If a revision is material, 
-            we will provide at least 30 days' notice prior to any new terms taking effect.
+            we will provide at least 30 days&apos; notice prior to any new terms taking effect.
           </p>
         </section>
 

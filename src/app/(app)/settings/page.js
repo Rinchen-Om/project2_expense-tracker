@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import '../../styles/settings.css';
 import '../../styles/home.css';
+import Image from 'next/image';
 
 export default function SettingsPage() {
   const [activeTab, setActiveTab] = useState('profile');
@@ -107,7 +108,14 @@ export default function SettingsPage() {
               <form onSubmit={handleProfileUpdate} className="settings-form">
                 <div className="avatar-container">
                   <div className="avatar-wrapper">
-                    <img src={profileData.avatar} alt="Profile" className="avatar" />
+                    <Image 
+                      src={profileData.avatar} 
+                      alt="Profile" 
+                      className="avatar"
+                      width={150}
+                      height={150}
+                      style={{ objectFit: 'cover' }}
+                    />
                     <div className="avatar-overlay">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
