@@ -19,6 +19,9 @@ export default function Map() {
   const mapInstanceRef = useRef(null);
 
   useEffect(() => {
+    // Import Leaflet CSS dynamically
+    import('leaflet/dist/leaflet.css');
+
     if (typeof window !== 'undefined' && !mapInstanceRef.current) {
       // Initialize the map
       mapInstanceRef.current = L.map(mapRef.current).setView([27.4716, 89.6386], 13);

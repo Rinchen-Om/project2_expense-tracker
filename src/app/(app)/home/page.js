@@ -3,7 +3,7 @@
 import { useEffect, useState, useRef } from 'react';
 import dynamic from 'next/dynamic';
 import '../../styles/home.css';
-import 'leaflet/dist/leaflet.css';
+import '../../styles/leaflet.css';
 
 // Dynamically import the Map component with no SSR
 const Map = dynamic(() => import('../../components/Map'), {
@@ -19,6 +19,9 @@ export default function Home() {
   const [showAllTransactions, setShowAllTransactions] = useState(false);
 
   useEffect(() => {
+    // Import Leaflet CSS dynamically
+    import('leaflet/dist/leaflet.css');
+    
     async function fetchData() {
       const [incomeRes, expenseRes] = await Promise.all([
         fetch('/api/income'),
