@@ -1,6 +1,17 @@
 import './globals.css';
-import { Inter } from 'next/font/google';
+import { Inter, Roboto, Montserrat } from 'next/font/google';
+
 const inter = Inter({ subsets: ['latin'] });
+const roboto = Roboto({ 
+  weight: ['300', '400', '500', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+});
+const montserrat = Montserrat({
+  weight: ['400', '500', '600', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 export const metadata = {
   title: 'Expense Tracker',
@@ -10,7 +21,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+      </head>
+      <body className={`${inter.className} ${roboto.className} ${montserrat.className}`}>
+        {children}
+      </body>
     </html>
   );
 }

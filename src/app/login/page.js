@@ -158,7 +158,7 @@ export default function LoginPage() {
         </form>
         <div className="login-footer">
           <p>
-            Don't have an account?{' '}
+            Don&apos;t have an account?{' '}
             <a href="#" onClick={e => { e.preventDefault(); setActiveForm("signup"); }}>Sign up</a>
           </p>
           <p>
