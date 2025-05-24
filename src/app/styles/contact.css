@@ -1,0 +1,155 @@
+.contactContainer {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  color: #333;
+}
+
+.contactHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.contactHeader h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.contactHeader p {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.contactContent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.contactForm {
+  flex: 1;
+  min-width: 300px;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contactInfo {
+  flex: 1;
+  min-width: 300px;
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.formGroup input,
+.formGroup textarea,
+.formGroup select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus,
+.formGroup select:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.formGroup textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.submitBtn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.submitBtn:hover {
+  background-color: #2980b9;
+}
+
+.infoItem {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.infoItem svg {
+  color: #3498db;
+  font-size: 1.5rem;
+  margin-top: 0.2rem;
+}
+
+.infoItem h3 {
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.infoItem p {
+  color: #7f8c8d;
+  line-height: 1.6;
+}
+
+.businessHours {
+  margin-top: 2rem;
+}
+
+.businessHours h3 {
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.hoursTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.hoursTable tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.hoursTable td {
+  padding: 0.5rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.mapContainer {
+  margin-top: 2rem;
+  height: 200px;
+  background-color: #eee;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7f8c8d;
+}

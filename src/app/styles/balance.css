@@ -1,0 +1,139 @@
+/* Balance Page Styles */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.balance-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.balance-header h1 {
+  font-size: 2.75rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.balance-amount {
+  font-size: 2.25rem;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.balance-amount.positive {
+  background-color: #e6ffed;
+  color: #22863a;
+}
+
+.balance-amount.negative {
+  background-color: #ffeef0;
+  color: #d73a49;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #444;
+}
+
+.summary-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.summary-card {
+  flex: 1;
+  min-width: 180px;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  background-color: #f9fafb;
+  transition: background-color 0.3s ease;
+}
+
+.income-card {
+  border-left: 5px solid #2ecc71;
+}
+
+.expense-card {
+  border-left: 5px solid #e74c3c;
+}
+
+.summary-value {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 0.75rem;
+}
+
+.income {
+  color: #27ae60;
+}
+
+.expense {
+  color: #c0392b;
+}
+
+.chart-container {
+  position: relative;
+  height: 350px;
+}
+
+.loading,
+.error {
+  text-align: center;
+  font-size: 1.25rem;
+  padding: 3rem;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode .card {
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+}
+
+body.dark-mode .summary-card {
+  background-color: #2c2c2c;
+}
+
+body.dark-mode .balance-amount.positive {
+  background-color: #204d36;
+  color: #6affb3;
+}
+
+body.dark-mode .balance-amount.negative {
+  background-color: #4d1e22;
+  color: #ff6f91;
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+  .summary-cards {
+    flex-direction: column;
+  }
+}

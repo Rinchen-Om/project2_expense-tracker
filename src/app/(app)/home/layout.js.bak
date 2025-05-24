@@ -1,0 +1,8 @@
+export const metadata = {
+  title: 'Personal Expense Tracker',
+  description: 'Track your expenses with ease',
+};
+
+export default function HomeLayout({ children }) {
+  return children;
+} 
