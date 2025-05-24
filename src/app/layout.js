@@ -1,5 +1,6 @@
 import './globals.css';
 import { Inter, Roboto, Montserrat } from 'next/font/google';
+import { SessionProvider } from "next-auth/react";
 
 const inter = Inter({ subsets: ['latin'] });
 const roboto = Roboto({ 
@@ -28,7 +29,9 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={`${inter.className} ${roboto.className} ${montserrat.className}`}>
-        {children}
+        <SessionProvider>
+          {children}
+        </SessionProvider>
       </body>
     </html>
   );

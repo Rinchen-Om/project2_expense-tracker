@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import Head from "next/head";
 import Script from "next/script";
 import '../styles/login.css';
@@ -15,6 +17,7 @@ export default function LoginPage() {
   const [error, setError] = useState("");
   const modeToggleRef = useRef();
   const [activeTab, setActiveTab] = useState('table');
+  const router = useRouter();
 
   // Load theme from localStorage
   useEffect(() => {
@@ -46,19 +49,16 @@ export default function LoginPage() {
     e.preventDefault();
     setError("");
     try {
-      const res = await fetch('/api/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(loginData),
+      const result = await signIn("credentials", {
+        email: loginData.email,
+        password: loginData.password,
+        redirect: false,
       });
-      const data = await res.json();
-      
-      if (res.ok) {
-        // Store user data in localStorage (excluding sensitive info)
-        localStorage.setItem('user', JSON.stringify(data.user));
-        window.location.href = "/home";
+
+      if (result?.error) {
+        setError(result.error);
       } else {
-        setError(data.message || "Invalid credentials. Please try again.");
+        router.push("/home");
       }
     } catch (err) {
       setError("Login failed. Please try again.");

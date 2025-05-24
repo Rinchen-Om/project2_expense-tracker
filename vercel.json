@@ -1,0 +1,9 @@
+{
+  "buildCommand": "npm run vercel-build",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "env": {
+    "NEXTAUTH_URL": "https://project2-expense-tracker.vercel.app",
+    "NEXTAUTH_SECRET": "your-super-secret-key-change-this-in-production"
+  }
+} 
