@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
   --primary: #2563eb;
   --secondary: #1e293b;
@@ -34,30 +30,9 @@ body {
   padding: 0;
 }
 
-a {
-  color: var(--secondary);
-  transition: color 0.2s;
-}
-
-a:hover {
-  color: var(--accent);
-}
-
 h1, h2, h3, h4, h5, h6 {
   color: var(--primary);
   font-family: 'Montserrat', 'Inter', Arial, sans-serif;
-}
-
-.app-root {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
 }
 
 .card, .about-card, .about-feature-card {
