@@ -1,3 +1,49 @@
+:root {
+  --primary-color: #4361ee;
+  --secondary-color: #3f37c9;
+  --accent-color: #4895ef;
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
+  --success-color: #4bb543;
+  --warning-color: #f0ad4e;
+  --danger-color: #d9534f;
+  --gray-color: #6c757d;
+  --light-gray: #e9ecef;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  line-height: 1.6;
+  transition: var(--transition);
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.card, .budget-summary-card, .budget-chart-card {
+  background: #fff;
+  color: var(--dark-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.btn {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background: var(--secondary-color);
+  color: #fff;
+}
+
 .budget-summary-row {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -6,9 +52,6 @@
 }
 
 .budget-summary-card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   padding: 24px;
   min-height: 120px;
   display: flex;
@@ -27,9 +70,6 @@
 }
 
 .budget-chart-card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   padding: 24px;
   min-height: 320px;
   display: flex;

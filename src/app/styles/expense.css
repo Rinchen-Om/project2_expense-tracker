@@ -1,20 +1,30 @@
 :root {
-  --primary-color: #e6e6fa;
-  --secondary-color: #23235b;
-  --accent-color: #b39ddb;
-  --dark-color: #23235b;
-  --light-color: #ffffff;
-  --warning-color: #ffc107;
-  --danger-color: #dc3545;
-  --success-color: #28a745;
+  --primary-color: #4361ee;
+  --secondary-color: #3f37c9;
+  --accent-color: #4895ef;
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
+  --success-color: #4bb543;
+  --warning-color: #f0ad4e;
+  --danger-color: #d9534f;
+  --gray-color: #6c757d;
+  --light-gray: #e9ecef;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
   --border-color: #b39ddb;
   --shadow-color: rgba(35, 35, 91, 0.08);
   --hover-color: #f3f3fa;
 }
 
 body {
-  background: var(--primary-color);
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--light-color);
   color: var(--dark-color);
+  line-height: 1.6;
+  transition: var(--transition);
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .container {
@@ -34,11 +44,11 @@ body {
   margin-bottom: 40px;
 }
 
-.expense-form, .expense-summary, .expense-history, .stat-card {
-  background: var(--light-color);
+.card, .expense-form-card, .expense-overview-card, .expense-chart-card {
+  background: #fff;
   color: var(--dark-color);
-  border-radius: 10px;
-  box-shadow: 0 4px 16px var(--shadow-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
 }
 
 .form-group {
@@ -60,13 +70,16 @@ input, select, textarea {
 }
 
 .btn {
-  padding: 12px 24px;
+  background: var(--primary-color);
+  color: #fff;
   border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background: var(--secondary-color);
+  color: #fff;
 }
 
 .btn-block {

@@ -1,17 +1,17 @@
 /* Global Styles */
 :root {
-    --primary-color: #e6e6fa; /* Lavender */
-    --secondary-color: #23235b; /* Dark Blue */
-    --accent-color: #b39ddb; /* Soft Lavender */
-    --light-color: #ffffff; /* White */
-    --dark-color: #23235b; /* Dark Blue */
-    --success-color: #27AE60;
-    --warning-color: #F39C12;
-    --danger-color: #E74C3C;
-    --gray-color: #7F8C8D;
-    --light-gray: #f3f3fa;
-    --border-radius: 10px;
-    --box-shadow: 0 4px 16px rgba(35, 35, 91, 0.08);
+    --primary-color: #4361ee;
+    --secondary-color: #3f37c9;
+    --accent-color: #4895ef;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --success-color: #4bb543;
+    --warning-color: #f0ad4e;
+    --danger-color: #d9534f;
+    --gray-color: #6c757d;
+    --light-gray: #e9ecef;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
     --primary-blue: #3b4cca;
     --accent-green: #28a745;
@@ -77,8 +77,8 @@ a {
 
 /* Navigation */
 .navbar {
-    background: var(--secondary-color);
-    color: var(--light-color);
+    background-color: #fff;
+    color: var(--primary-color);
     box-shadow: var(--box-shadow);
     padding: 15px 0;
     position: sticky;
@@ -104,7 +104,7 @@ a {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 1.5rem;
-    color: var(--light-color);
+    color: var(--primary-color);
     white-space: nowrap;
 }
 
@@ -139,17 +139,17 @@ a {
     border-radius: var(--border-radius);
     transition: var(--transition);
     font-weight: 500;
-    color: var(--light-color);
+    color: var(--primary-color);
 }
 
 .main-nav li a:hover {
-    background: var(--primary-color);
-    color: var(--secondary-color);
+    background-color: var(--light-gray);
+    color: var(--primary-color);
 }
 
 .main-nav li a.active {
-    background: var(--primary-color);
-    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    color: #fff;
 }
 
 .main-nav li a i {
@@ -191,7 +191,7 @@ a {
     align-items: center;
     margin-left: 30px;
     position: relative;
-    color: var(--light-color);
+    color: var(--primary-color);
 }
 
 .avatar {
@@ -281,13 +281,11 @@ a {
     margin-bottom: 40px;
 }
 
-.card {
-    background: var(--primary-color);
-    color: var(--secondary-color);
+.card, .about-card, .about-feature-card {
+    background: #fff;
+    color: var(--dark-color);
     border-radius: var(--border-radius);
-    padding: 20px;
     box-shadow: var(--box-shadow);
-    transition: var(--transition);
 }
 
 .card:hover {
@@ -918,4 +916,17 @@ a {
     .footer-title {
         font-size: 1.1rem;
     }
+}
+
+.btn, .btn-primary, button, input[type="submit"] {
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.btn:hover, .btn-primary:hover, button:hover, input[type="submit"]:hover {
+    background: var(--secondary-color);
+    color: #fff;
 } 
