@@ -73,9 +73,27 @@ export default function ExpensePage() {
   }, []);
 
   async function fetchExpenses() {
-    const res = await fetch('/api/expense');
-    const data = await res.json();
-    setExpenses(data);
+    try {
+      const res = await fetch('/api/expense');
+      if (!res.ok) {
+        const errData = await res.json();
+        if (res.status === 401) {
+          setError('You must be logged in to view your expenses.');
+          setExpenses([]);
+          return;
+        } else {
+          setError(errData.error || 'Failed to fetch expenses.');
+          setExpenses([]);
+          return;
+        }
+      }
+      const data = await res.json();
+      setExpenses(data);
+      setError('');
+    } catch (err) {
+      setError('An unexpected error occurred.');
+      setExpenses([]);
+    }
   }
 
   function resetForm() {

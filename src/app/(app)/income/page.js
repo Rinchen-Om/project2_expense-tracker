@@ -60,9 +60,27 @@ export default function IncomePage() {
   }, []);
 
   async function fetchIncomes() {
-    const res = await fetch('/api/income');
-    const data = await res.json();
-    setIncomes(data);
+    try {
+      const res = await fetch('/api/income');
+      if (!res.ok) {
+        const errData = await res.json();
+        if (res.status === 401) {
+          setError('You must be logged in to view your incomes.');
+          setIncomes([]);
+          return;
+        } else {
+          setError(errData.error || 'Failed to fetch incomes.');
+          setIncomes([]);
+          return;
+        }
+      }
+      const data = await res.json();
+      setIncomes(data);
+      setError('');
+    } catch (err) {
+      setError('An unexpected error occurred.');
+      setIncomes([]);
+    }
   }
 
   function resetForm() {
