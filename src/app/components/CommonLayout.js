@@ -37,7 +37,7 @@ export default function CommonLayout({ children }) {
       </div>
 
       {/* Quick Add Button */}
-      <Link href="/exp" className="quick-add-btn">
+      <Link href="/expense" className="quick-add-btn">
         <i className="fas fa-plus"></i>
       </Link>
 
@@ -62,7 +62,6 @@ export default function CommonLayout({ children }) {
               </li>
               <li><Link href="/balance"><i className="fas fa-piggy-bank"></i> Balance</Link></li>
               <li><Link href="/budget"><i className="fas fa-chart-pie"></i> Budget</Link></li>
-              <li><Link href="/analysis"><i className="fas fa-chart-bar"></i>Report</Link></li>
               <li><Link href="/settings"><i className="fas fa-cog"></i> Settings</Link></li>
             </ul>
             
@@ -97,7 +96,7 @@ export default function CommonLayout({ children }) {
               <li><Link href="/"><i className="fas fa-home"></i> Home</Link></li>
               <li><Link href="/dashboard"><i className="fas fa-chart-line"></i> Dashboard</Link></li>
               <li><Link href="/income"><i className="fas fa-money-bill-wave"></i> Income</Link></li>
-              <li><Link href="/exp"><i className="fas fa-shopping-cart"></i> Expense</Link></li>
+              <li><Link href="/expense"><i className="fas fa-shopping-cart"></i> Expense</Link></li>
               <li><Link href="/budget"><i className="fas fa-chart-pie"></i> Budget</Link></li>
             </ul>
           </div>

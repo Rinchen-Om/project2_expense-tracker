@@ -9,8 +9,8 @@
   --danger-color: #d9534f;
   --gray-color: #6c757d;
   --light-gray: #e9ecef;
-  --border-radius: 8px;
-  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --border-radius: 12px;
+  --box-shadow: 0 6px 24px rgba(67, 97, 238, 0.08), 0 1.5px 6px rgba(67, 97, 238, 0.04);
   --transition: all 0.3s ease;
 }
 
@@ -24,24 +24,11 @@ body {
   overflow-x: hidden;
 }
 
-.card, .budget-summary-card, .budget-chart-card {
-  background: #fff;
-  color: var(--dark-color);
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
-}
-
-.btn {
-  background: var(--primary-color);
-  color: #fff;
-  border: none;
-  border-radius: var(--border-radius);
-  transition: var(--transition);
-}
-
-.btn:hover {
-  background: var(--secondary-color);
-  color: #fff;
+.container {
+  width: 96%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
 }
 
 .budget-summary-row {
@@ -52,12 +39,33 @@ body {
 }
 
 .budget-summary-card {
+  background: #fff;
+  color: var(--dark-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
   padding: 24px;
-  min-height: 120px;
+  min-height: 100px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  border: 1px solid #e9ecef;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.budget-summary-card:hover {
+  box-shadow: 0 12px 32px rgba(67, 97, 238, 0.16), 0 3px 12px rgba(67, 97, 238, 0.08);
+  transform: translateY(-6px) scale(1.02);
+}
+.budget-summary-card h3 {
+  font-size: 1.1rem;
+  color: var(--gray-color);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.budget-summary-card .summary-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
 }
 
 .budget-charts-row {
@@ -70,26 +78,86 @@ body {
 }
 
 .budget-chart-card {
+  background: #fff;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
   padding: 24px;
   min-height: 320px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  border: 1px solid #e9ecef;
 }
 
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px 0;
+.budget-table {
+  width: 100%;
+  background: #fff;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-bottom: 24px;
+  border: 1px solid #e9ecef;
+  overflow: hidden;
+}
+.budget-table th, .budget-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 1rem;
+}
+.budget-table th {
+  background: var(--light-gray);
+  color: var(--gray-color);
+  font-weight: 600;
+}
+.budget-table tr:last-child td {
+  border-bottom: none;
+}
+.budget-table input[type="text"],
+.budget-table input[type="number"] {
+  width: 100%;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--light-gray);
+  background: var(--light-color);
+  color: var(--dark-color);
+  font-size: 1rem;
+}
+
+.budget-table .progress-bar {
+  height: 8px;
+  border-radius: 6px;
+  background: var(--light-gray);
+  overflow: hidden;
+}
+.budget-table .progress-bar-inner {
+  height: 100%;
+  background: var(--primary-color);
+  border-radius: 6px;
+  transition: width 0.4s;
+}
+
+.btn, .btn-primary, button, input[type="submit"] {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  font-size: 1rem;
+  padding: 10px 20px;
+  font-weight: 500;
+  margin-right: 10px;
+}
+.btn:hover, .btn-primary:hover, button:hover, input[type="submit"]:hover {
+  background: var(--secondary-color);
+  color: #fff;
 }
 
 @media (max-width: 900px) {
-  .budget-charts-row, .budget-summary-row {
+  .budget-summary-row, .budget-charts-row {
     grid-template-columns: 1fr;
     gap: 20px;
   }
 }
-
 @media (max-width: 600px) {
   body {
     font-size: 0.98rem;
@@ -100,7 +168,15 @@ body {
   h1, h2, h3 {
     font-size: 1.2rem;
   }
-  .summary-card, .card, .budget-summary-card {
+  .budget-summary-card, .budget-chart-card {
     padding: 10px !important;
+  }
+  .btn, .btn-primary, button, input[type="submit"] {
+    padding: 8px 12px;
+    font-size: 0.98rem;
+  }
+  .budget-table th, .budget-table td {
+    padding: 8px 6px;
+    font-size: 0.95rem;
   }
 } 
