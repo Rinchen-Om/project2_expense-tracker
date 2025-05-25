@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, useCallback } from 'react';
 import Chart from 'chart.js/auto';
-import styles from '../../styles/budget.css';
+import styles from '../../styles/budget.module.css';
 import '../../styles/home.css';
 
 export default function BudgetPlanner() {

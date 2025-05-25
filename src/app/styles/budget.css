@@ -87,6 +87,7 @@ body {
   flex-direction: column;
   align-items: center;
   border: 1px solid #e9ecef;
+  justify-content: flex-start;
 }
 
 .budget-table {
