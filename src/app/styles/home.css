@@ -529,35 +529,41 @@ a {
     gap: 30px;
 }
 
-.about-card {
-    flex: 1;
-    padding: 30px;
-    border-radius: 10px;
+.about-card, .about-feature-card {
+    /* Ensure cards are visible by default */
+    opacity: 1;
+    transform: none;
+    transition: box-shadow 0.3s, transform 0.3s, opacity 0.5s;
+    box-shadow: 0 6px 24px rgba(67, 97, 238, 0.08), 0 1.5px 6px rgba(67, 97, 238, 0.04);
     background: #fff;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s;
 }
 
-.about-card:hover {
-    transform: translateY(-5px);
+.about-card:hover, .about-feature-card:hover {
+    box-shadow: 0 12px 32px rgba(67, 97, 238, 0.16), 0 3px 12px rgba(67, 97, 238, 0.08);
+    transform: translateY(-8px) scale(1.03);
+    opacity: 1;
 }
 
-.about-card h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
-    color: var(--primary, #4e44ce);
+.about-card h2, .about-feature-card h3 {
+    color: var(--primary-color);
+    letter-spacing: 0.5px;
+}
+
+.about-card p, .about-feature-card p {
+    color: #444;
+    font-size: 1.08rem;
+    margin-top: 8px;
+}
+
+.about-features h2 {
+    color: var(--primary-color);
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
 .about-features {
     padding: 60px 0;
     background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
-}
-
-.about-features h2 {
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 40px;
-    color: var(--dark, #1e1e2c);
 }
 
 .about-features-grid {
@@ -572,7 +578,7 @@ a {
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     text-align: center;
-    transition: transform 0.3s;
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .about-feature-card:hover {
@@ -681,8 +687,6 @@ a {
 
 /* Animations */
 .about-card, .about-feature-card {
-  opacity: 0;
-  transform: translateY(20px);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
