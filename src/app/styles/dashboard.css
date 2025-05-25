@@ -238,11 +238,22 @@ body {
 }
 
 .dashboard-charts-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   gap: 24px;
   margin-bottom: 32px;
   align-items: stretch;
+}
+
+.dashboard-charts-row > .dashboard-card {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .dashboard-charts-row {
+    flex-direction: column;
+    gap: 20px;
+  }
 }
 
 .dashboard-card {
@@ -250,13 +261,6 @@ body {
   min-height: 320px;
   display: flex;
   flex-direction: column;
-}
-
-@media (max-width: 900px) {
-  .dashboard-charts-row {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
 }
 
 .navbar {

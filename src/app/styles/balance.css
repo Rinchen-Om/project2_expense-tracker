@@ -1,13 +1,16 @@
 /* Balance Page Styles */
+body {
+  background-color: #f4f6f8;
+}
+
 .container {
-  max-width: 1280px;
+  width: 90%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 3rem 2rem;
+  padding: 20px 0;
   font-family: 'Inter', sans-serif;
-  color: var(--dark-color);
+  color: #333;
   transition: background-color 0.3s ease, color 0.3s ease;
-  background: var(--primary-color);
-  border-radius: 10px;
 }
 
 .balance-header {
@@ -152,12 +155,26 @@ body.dark-mode .balance-amount.negative {
   color: #ff6f91;
 }
 
-@media (max-width: 768px) {
-  .container {
-    padding: 2rem 1rem;
-  }
+@media (max-width: 900px) {
   .summary-cards {
     flex-direction: column;
+    gap: 16px;
+    display: flex;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 0.98rem;
+  }
+  .container {
+    padding: 0 2px;
+  }
+  h1, h2, h3 {
+    font-size: 1.2rem;
+  }
+  .summary-card, .card {
+    padding: 10px !important;
   }
 }
 

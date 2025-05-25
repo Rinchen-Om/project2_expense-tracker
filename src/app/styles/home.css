@@ -30,7 +30,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: var(--light-color);
+    background-color: #f4f6f8;
     color: var(--dark-color);
     line-height: 1.6;
     transition: var(--transition);
@@ -1054,4 +1054,31 @@ a {
 .btn:hover, .btn-primary:hover, button:hover, input[type="submit"]:hover {
     background: var(--secondary-color);
     color: #fff;
+}
+
+@media (max-width: 900px) {
+  .container {
+    max-width: 98%;
+    padding: 0 5px;
+  }
+  .summary-cards, .about-features-grid {
+    flex-direction: column !important;
+    gap: 16px !important;
+    display: flex !important;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 0.98rem;
+  }
+  .container {
+    padding: 0 2px;
+  }
+  h1, h2, h3 {
+    font-size: 1.2rem;
+  }
+  .summary-card, .card, .about-card, .about-feature-card {
+    padding: 10px !important;
+  }
 } 

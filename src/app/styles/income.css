@@ -17,7 +17,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: var(--light-color);
+    background-color: #f4f6f8;
     color: var(--dark-color);
     line-height: 1.6;
     transition: var(--transition);
@@ -342,12 +342,27 @@ tr:hover {
 }
 
 @media (max-width: 900px) {
-    .income-page-row {
+    .income-section, .income-page-row {
         grid-template-columns: 1fr;
         gap: 20px;
     }
     .income-overview {
         flex-direction: column;
         gap: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 0.98rem;
+    }
+    .container {
+        padding: 0 2px;
+    }
+    h1, h2, h3 {
+        font-size: 1.2rem;
+    }
+    .summary-card, .card, .income-form-card, .income-overview-card {
+        padding: 10px !important;
     }
 } 

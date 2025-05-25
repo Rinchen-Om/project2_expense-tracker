@@ -19,7 +19,7 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: var(--light-color);
+  background-color: #f4f6f8;
   color: var(--dark-color);
   line-height: 1.6;
   transition: var(--transition);
@@ -28,11 +28,11 @@ body {
 }
 
 .container {
+  width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 20px 0;
 }
-
 
 .page-title {
   text-align: center;
@@ -333,22 +333,30 @@ tr:hover {
 }
 
 /* Responsive styles */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .expense-section {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
-
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .filter-controls {
+  .summary-cards {
     flex-direction: column;
+    gap: 16px;
+    display: flex;
   }
+}
 
-  .filter-group,
-  .search-bar {
-    width: 100%;
+@media (max-width: 600px) {
+  body {
+    font-size: 0.98rem;
+  }
+  .container {
+    padding: 0 2px;
+  }
+  h1, h2, h3 {
+    font-size: 1.2rem;
+  }
+  .summary-card, .card, .expense-form-card, .expense-overview-card {
+    padding: 10px !important;
   }
 }
 
