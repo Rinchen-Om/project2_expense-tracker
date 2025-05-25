@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, useCallback } from 'react';
 import Chart from 'chart.js/auto';
-import styles from '../../styles/budget.css';
+import styles from '../../styles/budget.module.css';
 import '../../styles/home.css';
 
 export default function BudgetPlanner() {
@@ -227,12 +227,12 @@ export default function BudgetPlanner() {
           </div>
         </div>
 
-        <div className={styles.chartsContainer}>
-          <div className={styles.chartWrapper}>
+        <div className={styles['budget-charts-row']}>
+          <div className={styles['budget-chart-card']}>
             <h3>Budget Allocation</h3>
             <canvas ref={budgetChartRef}></canvas>
           </div>
-          <div className={styles.chartWrapper}>
+          <div className={styles['budget-chart-card']}>
             <h3>Spending Comparison</h3>
             <canvas ref={spendingChartRef}></canvas>
           </div>
