@@ -122,10 +122,22 @@ body {
 }
 
 .charts-container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
   margin-bottom: 2rem;
+}
+
+.chart-card {
+  background: #fff;
+  color: var(--dark-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-width: 0;
 }
 
 .chart-title {
@@ -250,9 +262,9 @@ body {
 }
 
 @media (max-width: 900px) {
-  .dashboard-charts-row {
-    flex-direction: column;
-    gap: 20px;
+  .charts-container {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
 }
 

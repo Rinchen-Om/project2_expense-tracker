@@ -227,6 +227,9 @@ export default function BudgetPlanner() {
           </div>
         </div>
 
+        <button className={styles.addButton} onClick={addBudgetRow}>
+          Add Category
+        </button>
         <div className={styles['budget-charts-row']}>
           <div className={styles['budget-chart-card']}>
             <h3>Budget Allocation</h3>
@@ -239,10 +242,6 @@ export default function BudgetPlanner() {
         </div>
         
         <div className={styles.tableContainer}>
-          <button className={styles.addButton} onClick={addBudgetRow}>
-            Add Category
-          </button>
-          
           <table className={styles.table}>
             <thead>
               <tr>
