@@ -175,13 +175,7 @@ export default function BalancePage() {
         </div>
       </div>
 
-      <div className="card">
-        <h2>Balance Trend</h2>
-        <div className="chart-container">
-          <canvas id="balanceChart"></canvas>
-        </div>
-      </div>
-
+  
       {/* Footer would typically be in a layout component */}
     </div>
   );

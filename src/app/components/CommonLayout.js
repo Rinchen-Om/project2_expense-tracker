@@ -58,7 +58,6 @@ export default function CommonLayout({ children }) {
                 <ul className="dropdown-menu">
                   <li><Link href="/income"><i className="fas fa-money-bill-wave"></i> Income</Link></li>
                   <li><Link href="/expense"><i className="fas fa-shopping-cart"></i> Expense</Link></li>
-                  <li><Link href="/categories"><i className="fas fa-tags"></i> Categories</Link></li>
                 </ul>
               </li>
               <li><Link href="/balance"><i className="fas fa-piggy-bank"></i> Balance</Link></li>
@@ -67,19 +66,7 @@ export default function CommonLayout({ children }) {
               <li><Link href="/settings"><i className="fas fa-cog"></i> Settings</Link></li>
             </ul>
             
-            <div className="user-profile">
-              <div className="dropdown">
-                <Link href="#" className="user-dropdown">
-                  <Image src="https://via.placeholder.com/40" alt="User" className="avatar" width={40} height={40} />
-                  <span>John Doe</span>
-                  <i className="fas fa-chevron-down"></i>
-                </Link>
-                <ul className="dropdown-menu">
-                  <li><Link href="/help"><i className="fas fa-question-circle"></i> Help</Link></li>
-                  <li><Link href="/logout"><i className="fas fa-sign-out-alt"></i> Logout</Link></li>
-                </ul>
-              </div>
-            </div>
+           
           </div>
         </div>
       </nav>
