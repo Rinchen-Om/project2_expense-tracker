@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import '../../styles/expense.css';
 import '../../styles/home.css';
+import { Chart, Line, Pie } from 'react-chartjs-2';
 import dynamic from 'next/dynamic';
 import {
   Chart as ChartJS,
