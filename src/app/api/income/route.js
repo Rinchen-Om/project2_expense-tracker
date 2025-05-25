@@ -1,17 +1,11 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
-import { getServerSession } from 'next-auth/next';
-import { authOptions } from '@/lib/auth';
 
 // GET: List all incomes
-export async function GET(req) {
-  const session = await getServerSession(authOptions);
-  if (!session || !session.user?.id) {
-    return NextResponse.json({ error: 'Not authenticated' }, { status: 401 });
-  }
+export async function GET() {
   try {
     const incomes = await prisma.income.findMany({
-      where: { userId: session.user.id },
+      where: { userId: 1 }, // Replace with real userId from session
       orderBy: { date: 'desc' },
     });
     return NextResponse.json(incomes);
@@ -22,10 +16,6 @@ export async function GET(req) {
 
 // POST: Create new income
 export async function POST(req) {
-  const session = await getServerSession(authOptions);
-  if (!session || !session.user?.id) {
-    return NextResponse.json({ error: 'Not authenticated' }, { status: 401 });
-  }
   try {
     const body = await req.json();
     const { amount, source, date, description } = body;
@@ -35,7 +25,7 @@ export async function POST(req) {
         source,
         date: new Date(date),
         note: description,
-        userId: session.user.id,
+        userId: 1, // Replace with real userId from session
       },
     });
     return NextResponse.json(income);
