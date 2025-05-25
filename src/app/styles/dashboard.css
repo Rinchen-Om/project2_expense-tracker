@@ -216,3 +216,28 @@
     flex-direction: column;
   }
 }
+
+.dashboard-charts-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+  align-items: stretch;
+}
+
+.dashboard-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 24px;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 900px) {
+  .dashboard-charts-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

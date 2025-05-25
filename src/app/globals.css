@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --lavender: #e6e6fa;
+  --lavender: #ffffff;
   --dark-blue: #23235b;
   --white: #ffffff;
   --primary-color: var(--lavender);
   --secondary-color: var(--dark-blue);
-  --accent-color: #b39ddb;
+  --accent-color: #ffffff;
   --text-color: var(--dark-blue);
   --background-color: var(--white);
   --header-bg: var(--dark-blue);
